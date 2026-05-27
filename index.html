@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>She Can Foundation | Contact Form</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+
+    <div class="page-shell">
+        <header class="topbar">
+            <div class="brand">
+                <div class="brand-mark" aria-hidden="true">
+                    <svg viewBox="0 0 64 64" role="img" aria-label="She Can Foundation logo">
+                        <circle cx="32" cy="32" r="22" class="brand-ring"></circle>
+                        <path d="M24 32c0-6 4-10 10-10 4 0 7 2 9 5" class="brand-line"></path>
+                        <path d="M40 32c0 6-4 10-10 10-4 0-7-2-9-5" class="brand-line"></path>
+                    </svg>
+                </div>
+                <div>
+                    <p class="eyebrow"> Simple Contact Form</p>
+                    <h1>She Can Foundation</h1>
+                </div>
+            </div>
+
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch theme">
+                <span id="themeIcon">🌙</span>
+                <span id="themeText">Dark</span>
+            </button>
+        </header>
+
+        <main id="main-content" class="single-layout">
+            <section class="form-panel card">
+                <div class="panel-head">
+                    <div>
+                        <p class="section-tag">Contact Form</p>
+                        <h2>Send your details</h2>
+                    </div>
+                    <div class="status-pill" id="formStatus">Ready</div>
+                </div>
+
+                <div class="progress-wrap" aria-label="Form completion status">
+                    <div class="progress-meta">
+                        <span>Completion</span>
+                        <span id="progressText">0%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                </div>
+
+                <form id="contactForm" novalidate>
+                    <div class="field" id="nameField">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your full name"
+                            autocomplete="name" />
+                        <small>Name is required.</small>
+                    </div>
+
+                    <div class="field" id="emailField">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="you@example.com"
+                            autocomplete="email" />
+                        <small>Please enter a valid email address.</small>
+                    </div>
+
+                    <div class="field" id="messageField">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Write your message here"></textarea>
+                        <div class="message-meta">
+                            <small>Message should be at least 10 characters.</small>
+                            <span id="charCount">0 / 300</span>
+                        </div>
+                    </div>
+
+                    <div class="action-row">
+                        <label class="checkbox-wrap">
+                            <input type="checkbox" id="terms" />
+                            <span>I confirm these details are correct.</span>
+                        </label>
+
+                        <div class="button-group">
+                            <button class="ghost-btn" type="button" id="clearBtn">Clear</button>
+                            <button class="primary-btn" type="submit" id="submitBtn" disabled>Submit form</button>
+                        </div>
+                    </div>
+                </form>
+            </section>
+
+            <section class="preview-panel card">
+                <div class="panel-head">
+                    <div>
+                        <p class="section-tag">Submission Preview</p>
+                        <h2>Last submitted data</h2>
+                    </div>
+                    <span class="mini-dot"></span>
+                </div>
+
+                <div class="preview-grid">
+                    <div class="preview-item">
+                        <p>Name</p>
+                        <h3 id="previewName">—</h3>
+                    </div>
+                    <div class="preview-item">
+                        <p>Email</p>
+                        <h3 id="previewEmail">—</h3>
+                    </div>
+                    <div class="preview-item preview-wide">
+                        <p>Message</p>
+                        <h3 id="previewMessage">No submission yet.</h3>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite">
+        <span class="toast-dot"></span>
+        <span>Form Submitted Successfully</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
